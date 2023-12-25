@@ -5,6 +5,9 @@
     <title>FlightAngel</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -56,5 +59,27 @@
             <img src="assets/images/ticket.png" alt="Görsel">
         </div>
     </div>
+    <form id="flightSearchForm">
+        <label for="departureAirport">Kalkış Havaalanı:</label>
+        <input type="text" id="departureAirport" name="departureAirport">
+
+        <label for="arrivalAirport">Varış Havaalanı:</label>
+        <input type="text" id="arrivalAirport" name="arrivalAirport">
+
+        <label for="departureDate">Kalkış Tarihi:</label>
+        <input type="text" id="departureDate" name="departureDate">
+
+        <label for="returnDate">Dönüş Tarihi:</label>
+        <input type="text" id="returnDate" name="returnDate">
+
+        <label for="oneWay">Tek Yönlü Uçuş:</label>
+        <input type="checkbox" id="oneWay" name="oneWay">
+
+        <button type="button" onclick="searchFlights()">Uçuşları Ara</button>
+    </form>
+
+    <div id="loading">Yükleniyor...</div>
+
+    <ul id="flightList"></ul>
 </body>
 </html>
